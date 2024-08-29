@@ -1,0 +1,197 @@
+HTML;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Welcome to my portfolio! I'm a web developer with a passion for creating engaging and user-friendly websites. Check out my work below.</p>
+        </div>
+    </section>
+    
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="portfolio-item">
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Description of project 1.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Description of project 2.</p>
+            </div>
+            <!-- Add more portfolio items as needed -->
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+CSS:
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 40px 20px;
+}
+
+section#about {
+    background: #f4f4f4;
+}
+
+section#portfolio {
+    background: #fff;
+}
+
+section#contact {
+    background: #f4f4f4;
+}
+
+.portfolio-item {
+    margin-bottom: 20px;
+}
+
+.portfolio-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+form button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #555;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+
+
+
+JAVASCRIPT:
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    if (name && email && message) {
+        alert('Thank you for your message, ' + name + '! We will get back to you soon.');
+        // Here you can add code to send form data to your server if needed
+        // e.g., using fetch or XMLHttpRequest
+    } else {
+        alert('Please fill out all fields.');
+    }
+});
