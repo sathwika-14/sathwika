@@ -1,0 +1,219 @@
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to Our Service</h1>
+            <p>Your solution for [service/benefit]</p>
+            <a href="#signup" class="cta-button">Get Started</a>
+        </div>
+    </header>
+    
+    <section id="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="feature">
+                <img src="feature1.png" alt="Feature 1">
+                <h3>Feature 1</h3>
+                <p>Description of Feature 1.</p>
+            </div>
+            <div class="feature">
+                <img src="feature2.png" alt="Feature 2">
+                <h3>Feature 2</h3>
+                <p>Description of Feature 2.</p>
+            </div>
+            <div class="feature">
+                <img src="feature3.png" alt="Feature 3">
+                <h3>Feature 3</h3>
+                <p>Description of Feature 3.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="signup">
+        <div class="container">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Our Service. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+CSS:
+
+
+
+
+/* Basic Reset */
+body, h1, h2, h3, p, ul, li, form, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #ff5733;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background: #e04e24;
+}
+
+/* Features Section */
+#features {
+    padding: 40px 20px;
+    background: #f4f4f4;
+}
+
+#features h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feature {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feature img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    margin: 10px 0;
+}
+
+.feature p {
+    color: #555;
+}
+
+/* Signup Section */
+#signup {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#signup h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: inline-block;
+    max-width: 400px;
+    width: 100%;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background: #555;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+
+
+
+
+JAVASCRIPT:
+// Smooth Scroll for CTA Button
+document.querySelector('.cta-button').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('#signup').scrollIntoView({ behavior: 'smooth' });
+});
+
+// Handle Form Submission
+document.getElementById('signup-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    
+    if (email) {
+        alert('Thank you for subscribing! We will get in touch with you soon.');
+        // Here you can add code to send form data to your server if needed
+        // e.g., using fetch or XMLHttpRequest
+    } else {
+        alert('Please enter a valid email address.');
+    }
+});
